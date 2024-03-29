@@ -11,7 +11,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<Navigate replace to="/blogs" />} />
+        <Route path="/" element={<Navigate replace to="/signin" />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blog/:id" element={<Blog />} />
