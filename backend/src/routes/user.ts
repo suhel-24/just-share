@@ -83,3 +83,13 @@ userRouter.post('/signup', async (c) => {
       return c.text('Invalid')
     }
   })
+
+  userRouter.post('/delete', async (c) => {
+    const prisma = new PrismaClient({
+      datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate())
+          // Use the deleteMany method on the model to delete all records
+      const deleteResult = await prisma.user.deleteMany({});
+    
+      return c.json("success");
+    })
