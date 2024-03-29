@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link ,useNavigate} from "react-router-dom"
 
 export const Appbar = () => {
+    const navigate = useNavigate();
 
     const logout = () => {
         localStorage.removeItem("token");
-        window.location.href = "/signin";
+        navigate('/signin');
     }
 
     return <div className="border-b flex justify-between px-10 py-4">
